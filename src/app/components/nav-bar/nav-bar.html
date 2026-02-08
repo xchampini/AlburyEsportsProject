@@ -1,0 +1,14 @@
+<nav class="navbar">
+  <!-- TODO: add logo  -->
+  <!-- <div class="navbar-logo">
+        <a></a>
+    </div> -->
+
+  <ul class="navbar-links">
+    @for (route of routes; track route.id) {
+      <li>
+        <a [routerLink]="route.path" routerLinkActive="active">{{ route.label }}</a>
+      </li>
+    }
+  </ul>
+</nav>
