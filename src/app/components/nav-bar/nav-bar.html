@@ -1,14 +1,23 @@
 <nav class="navbar">
-  <!-- TODO: add logo  -->
-  <!-- <div class="navbar-logo">
-        <a></a>
-    </div> -->
+  <div class="nav-inner">
+    <a class="brand" routerLink="/" (click)="closeMenu()">Albury Esports & Gaming</a>
 
-  <ul class="navbar-links">
-    @for (route of routes; track route.id) {
-      <li>
-        <a [routerLink]="route.path" routerLinkActive="active">{{ route.label }}</a>
-      </li>
-    }
-  </ul>
+    <button class="menu-toggle" type="button" (click)="toggleMenu()" aria-label="Toggle navigation menu">
+      ☰
+    </button>
+
+    <ul class="navbar-links" [class.open]="isMenuOpen()">
+      @for (route of routes; track route.id) {
+        <li>
+          <a
+            [routerLink]="route.path"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: route.exactMatch }"
+            (click)="closeMenu()"
+            >{{ route.label }}</a
+          >
+        </li>
+      }
+    </ul>
+  </div>
 </nav>

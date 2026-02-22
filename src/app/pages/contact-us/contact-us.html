@@ -1,1 +1,32 @@
-<p>contact-us works!</p>
+<section class="contact-page">
+  <h1>Contact Us</h1>
+  <p>Got a question or want to partner with us? Send us a message.</p>
+
+  <form [formGroup]="contactForm" (ngSubmit)="submitForm()" novalidate>
+    <label>
+      Name
+      <input type="text" formControlName="name" />
+    </label>
+
+    <label>
+      Email
+      <input type="email" formControlName="email" />
+    </label>
+
+    <label>
+      Message
+      <textarea rows="5" formControlName="message"></textarea>
+    </label>
+
+    <button type="submit" [disabled]="isSubmitting()">{{ isSubmitting() ? 'Sending...' : 'Send message' }}</button>
+  </form>
+
+  @if (isSubmitted()) {
+    <p class="success">Thanks! Your message was sent.</p>
+  }
+
+  <div class="socials">
+    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+  </div>
+</section>

@@ -1,0 +1,12 @@
+@mixin page-container {
+  width: min(100% - 2rem, 1100px);
+  margin-inline: auto;
+}
+
+@mixin card {
+  background: rgba(255, 255, 255, 0.95);
+  color: #1f1f2b;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 12px 24px rgba(17, 17, 28, 0.15);
+}

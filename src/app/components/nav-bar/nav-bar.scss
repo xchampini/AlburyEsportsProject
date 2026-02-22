@@ -1,15 +1,78 @@
-ul {
-  height: 60px;
-  margin: 0;
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(20, 13, 34, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+}
+
+.nav-inner {
+  @include page-container;
+  min-height: 68px;
   display: flex;
   align-items: center;
-  gap: 20px;
-  list-style-type: none;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  color: $color-text-light;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
   padding: 0;
 }
 
-.navbar-links li a {
+.navbar-links a {
+  color: $color-text-light;
   text-decoration: none;
-  color: black;
   font-weight: 600;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+}
+
+.navbar-links a.active,
+.navbar-links a:hover {
+  background: rgba(112, 204, 217, 0.22);
+}
+
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    background: transparent;
+    color: $color-text-light;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    padding: 0.35rem 0.6rem;
+  }
+
+  .navbar-links {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 1rem;
+    right: 1rem;
+    background: rgba(31, 18, 50, 0.98);
+    border-radius: 12px;
+    padding: 1rem;
+    flex-direction: column;
+  }
+
+  .navbar-links.open {
+    display: flex;
+  }
 }

@@ -1,5 +1,8 @@
 :host {
   display: block;
-  height: 100%;
-  background: linear-gradient(175deg, #3a1460, /* darker base */ #662b90 80%, #7f49c5);
+  min-height: 100%;
+}
+
+.page-shell {
+  min-height: calc(100vh - 140px);
 }

@@ -1,0 +1,15 @@
+@use '../../../styles/mixins' as *;
+
+.games-page {
+  @include page-container;
+  padding: 2rem 0;
+}
+
+.games-list {
+  display: grid;
+  gap: 1rem;
+
+  article {
+    @include card;
+  }
+}
