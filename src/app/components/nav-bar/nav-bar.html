@@ -1,5 +1,9 @@
+<!-- TODO: set up mobile view, this works fine on desktop -->
 <nav class="navbar">
   <div class="nav-inner">
+    <a routerLink="/">
+      <img class="logo-icon" ngSrc="logo.png" width="100" height="79" />
+    </a>
     <ul class="navbar-links" [class.open]="isMenuOpen()">
       @for (route of routes; track route.id) {
         <li>

@@ -5,7 +5,7 @@
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(20, 13, 34, 0.85);
+  background: $brand-blue;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(8px);
 }
@@ -13,6 +13,7 @@
 .nav-inner {
   @include page-container;
   min-height: 68px;
+  height: 90px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -37,14 +38,17 @@
   color: $color-text-light;
   text-decoration: none;
   font-weight: 600;
-  padding: 0.35rem 0.6rem;
-  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
   text-transform: uppercase;
 }
 
-.navbar-links a.active,
 .navbar-links a:hover {
-  background: rgba(112, 204, 217, 0.22);
+  color: #fff;
+}
+
+.navbar-links a.active {
+  color: $brand-cyan;
+  border-bottom: 3px solid $brand-cyan;
 }
 
 .menu-toggle {

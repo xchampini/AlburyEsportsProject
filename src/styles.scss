@@ -6,7 +6,6 @@
 
 html,
 body {
-  height: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -14,7 +13,12 @@ body {
 }
 
 body {
-  background: linear-gradient(160deg, $color-bg-primary-dark 0%, $color-bg-primary 55%, #7f49ad 100%);
+  background: linear-gradient(
+    160deg,
+    $color-bg-primary-dark 0%,
+    $color-bg-primary 55%,
+    #111111 100%
+  );
 }
 
 a {
