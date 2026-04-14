@@ -1,5 +1,7 @@
 <swiper-container>
-  <swiper-slide>
-    <ng-content />
-  </swiper-slide>
+  @for (item of items(); track $index) {
+    <swiper-slide>
+      <ng-container [ngTemplateOutlet]="item"></ng-container>
+    </swiper-slide>
+  }
 </swiper-container>
