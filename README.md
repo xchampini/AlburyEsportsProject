@@ -54,32 +54,6 @@ ng e2e
 
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
-
-## CSR-only setup
-
-This app now runs as a **client-side rendered (CSR) Angular app**.
-
-### What changed
-
-- Removed Angular SSR server entrypoints and config files:
-  - `src/server.ts`
-  - `src/main.server.ts`
-  - `src/app/app.config.server.ts`
-  - `src/app/app.routes.server.ts`
-- Removed SSR build options from `angular.json` (`server`, `outputMode`, and `ssr` in build options).
-- Removed hydration provider from `src/app/app.config.ts` (`provideClientHydration(withEventReplay())`).
-- Removed SSR-only dependencies and scripts from `package.json`:
-  - `@angular/ssr`
-  - `@angular/platform-server`
-  - `express`
-  - `@types/express`
-  - `serve:ssr:albury-esports-site` script
-
-### Result
-
-- `ng serve` now runs a standard CSR dev server.
-- `ng build` now outputs a browser build only (no Node server bundle).
-
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
