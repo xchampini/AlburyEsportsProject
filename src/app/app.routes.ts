@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { discordRedirectGuard } from './shared/discord-redirect/discord-redirect-guard';
 
 export const routes: Routes = [
   {
@@ -18,12 +19,22 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/about-us/about-us').then((m) => m.AboutUs),
   },
   {
+    path: 'standings',
+    loadComponent: () => import('./pages/standings/standings').then((m) => m.Standings),
+  },
+  {
     path: 'shop',
     loadComponent: () => import('./pages/shop/shop').then((m) => m.Shop),
   },
   {
     path: 'contact',
     loadComponent: () => import('./pages/contact-us/contact-us').then((m) => m.ContactUs),
+  },
+  {
+    path: 'discord',
+    canActivate: [discordRedirectGuard],
+    loadComponent: () =>
+      import('./pages/discord-redirect/discord-redirect').then((m) => m.DiscordRedirect),
   },
   { path: '**', redirectTo: '' },
 ];

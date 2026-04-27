@@ -6,19 +6,6 @@
   padding: 4rem 0 2rem;
 }
 
-.hero {
-  @include card;
-
-  h1 {
-    margin: 0.2rem 0 0.8rem;
-    font-size: clamp(1.8rem, 3vw, 2.6rem);
-  }
-
-  p {
-    color: #7a7a7a;
-  }
-}
-
 .eyebrow {
   color: $color-accent-indigo;
   font-weight: 700;
@@ -29,6 +16,8 @@
   gap: 1rem;
   margin-top: 1.2rem;
   flex-wrap: wrap;
+
+  padding-bottom: 20px;
 
   a {
     text-decoration: none;
