@@ -1,4 +1,10 @@
-<swiper-container>
+<swiper-container
+  #swiper
+  [loop]="loop()"
+  autoplay-delay="7000"
+  autoplay-disable-on-interaction="false"
+  speed="800"
+>
   @for (item of items(); track $index) {
     <swiper-slide>
       <ng-container [ngTemplateOutlet]="item"></ng-container>
