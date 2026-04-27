@@ -1,1 +1,12 @@
-<p>games works!</p>
+<section class="games-page">
+  <h1>Games We Host</h1>
+  <div class="games-list">
+    @for (game of games; track game.id) {
+      <article>
+        <h2>{{ game.name }}</h2>
+        <p>{{ game.description }}</p>
+        <p><strong>Format:</strong> {{ game.format }}</p>
+      </article>
+    }
+  </div>
+</section>

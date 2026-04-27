@@ -1,0 +1,55 @@
+@use '../../../styles/mixins' as *;
+@use '../../../styles/variables' as *;
+
+.contact-page {
+  @include page-container;
+  padding: 2rem 0;
+
+  form {
+    @include card;
+    display: grid;
+    gap: 0.9rem;
+    max-width: 620px;
+  }
+
+  label {
+    display: grid;
+    gap: 0.4rem;
+    color: $color-text;
+    font-weight: 600;
+  }
+
+  input,
+  textarea {
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    padding: 0.7rem;
+    font: inherit;
+  }
+
+  button {
+    width: fit-content;
+    background: $color-accent-indigo;
+    color: white;
+    border: 0;
+    border-radius: 8px;
+    padding: 0.65rem 1rem;
+    font-weight: 700;
+  }
+
+  .success {
+    color: $color-accent-cyan;
+    font-weight: 600;
+  }
+
+  .socials {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    font-weight: 600;
+
+    a {
+      color: $color-accent-cyan;
+    }
+  }
+}

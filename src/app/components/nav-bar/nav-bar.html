@@ -1,14 +1,21 @@
+<!-- TODO: set up mobile view, this works fine on desktop -->
 <nav class="navbar">
-  <!-- TODO: add logo  -->
-  <!-- <div class="navbar-logo">
-        <a></a>
-    </div> -->
-
-  <ul class="navbar-links">
-    @for (route of routes; track route.id) {
-      <li>
-        <a [routerLink]="route.path" routerLinkActive="active">{{ route.label }}</a>
-      </li>
-    }
-  </ul>
+  <div class="nav-inner">
+    <a routerLink="/">
+      <img class="logo-icon" ngSrc="logo.png" width="100" height="79" [priority]="true" />
+    </a>
+    <ul class="navbar-links" [class.open]="isMenuOpen()">
+      @for (route of routes; track route.id) {
+        <li>
+          <a
+            [routerLink]="route.path"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: route.exactMatch }"
+            (click)="closeMenu()"
+            >{{ route.label }}</a
+          >
+        </li>
+      }
+    </ul>
+  </div>
 </nav>

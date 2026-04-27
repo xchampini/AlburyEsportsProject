@@ -1,0 +1,10 @@
+@use '../../../styles/mixins' as *;
+
+.about-page {
+  @include page-container;
+  padding: 2rem 0;
+
+  article {
+    @include card;
+  }
+}

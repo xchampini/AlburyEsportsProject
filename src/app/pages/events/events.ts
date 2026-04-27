@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EVENTS } from '../../data/events.data';
 
 @Component({
   selector: 'app-events',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './events.scss',
 })
 export class Events {
-
+  protected readonly events = EVENTS;
 }

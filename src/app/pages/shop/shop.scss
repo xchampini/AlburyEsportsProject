@@ -1,0 +1,12 @@
+@use '../../../styles/mixins' as *;
+
+.shop-page {
+  @include page-container;
+  padding: 2rem 0;
+
+  article {
+    @include card;
+    text-align: center;
+    padding: 3rem 1rem;
+  }
+}
