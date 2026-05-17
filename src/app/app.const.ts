@@ -5,6 +5,13 @@ export const NavRoutes: NavRoute[] = [
   { id: 2, label: 'Events', path: '/events', exactMatch: true },
   { id: 3, label: 'Games', path: '/games', exactMatch: true },
   { id: 4, label: 'About Us', path: '/about', exactMatch: true },
-  { id: 5, label: 'Shop', path: '/shop', exactMatch: true },
-  { id: 6, label: 'Contact Us', path: '/contact', exactMatch: true },
+  { id: 5, label: 'Standings', path: '/standings', exactMatch: true },
+  { id: 6, label: 'Shop', path: '/shop', exactMatch: true },
+  { id: 7, label: 'Contact Us', path: '/contact', exactMatch: true },
 ];
+
+export const ExternalLinks = {
+  discord: 'https://discord.com/invite/Ggkfa2upYj',
+  facebook: 'https://www.facebook.com/AlburyEsports',
+  instagram: 'https://www.instagram.com/albury_esports',
+};

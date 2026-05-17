@@ -15,13 +15,7 @@ export const GAMES: GameItem[] = [
   {
     id: 'smash-bros',
     name: 'Super Smash Bros. Ultimate',
-    description: 'Local bracket nights open to beginners and experienced players alike.',
+    description: 'Smash Bros ',
     format: '1v1 singles, occasional doubles',
-  },
-  {
-    id: 'community-mixers',
-    name: 'Community Mixers',
-    description: 'Special nights featuring party games and community-voted competitions.',
-    format: 'Seasonal showcases',
   },
 ];

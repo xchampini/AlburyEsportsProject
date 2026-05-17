@@ -2,9 +2,38 @@
   <div class="content">
     <p>© {{ year }} Albury Esports & Gaming</p>
     <div class="socials">
-      <!-- TODO: update links -->
-      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <!-- TODO: the links should have a url and display name -->
+      <!-- Also should have aria-label and title attributes -->
+      <a
+        [href]="externalLinks.facebook"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Facebook"
+        title="Facebook"
+      >
+        <fa-icon [icon]="facebookIcon"></fa-icon>
+        Facebook</a
+      >
+      <a
+        [href]="externalLinks.instagram"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+        title="Instagram"
+      >
+        <fa-icon [icon]="instagramIcon"></fa-icon>
+        Instagram</a
+      >
+      <a
+        [href]="externalLinks.discord"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Discord"
+        title="Discord"
+      >
+        <fa-icon [icon]="discordIcon"></fa-icon>
+        Discord</a
+      >
     </div>
   </div>
 </footer>

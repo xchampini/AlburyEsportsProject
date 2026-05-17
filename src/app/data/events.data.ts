@@ -13,38 +13,24 @@ export interface EventItem {
 
 export const EVENTS: EventItem[] = [
   {
-    id: 'rocket-league-monthly',
-    title: 'Rocket League Monthly Rumble',
-    dateText: 'Last Sunday of every month',
-    timeText: '6:30 PM',
-    locationText: 'Albury Community Hall',
-    game: 'Rocket League',
-    description:
-      'A casual 2v2 tournament night with rotating maps, shoutcasting, and prizes for top teams.',
-    bracketUrl: 'https://www.start.gg/',
-    ticketUrl: 'https://example.com/tickets/rocket-league',
-    isFeatured: true,
-  },
-  {
-    id: 'smash-weekly',
-    title: 'Smash Bros Weeknight Bash',
-    dateText: 'Every second Friday',
-    timeText: '7:00 PM',
-    locationText: 'Albury Library Activity Space',
+    id: 'smash-monthly',
+    title: 'Smash Champions',
+    dateText: 'Last Saturday of every Month',
+    timeText: '12:30 PM',
+    locationText: 'Someplace',
     game: 'Super Smash Bros. Ultimate',
-    description:
-      'Friendly local bracket with beginner and open pools. Bring your controller and join the fun.',
+    description: 'Friendly local bracket.',
     bracketUrl: 'https://www.start.gg/',
     isFeatured: true,
   },
   {
-    id: 'annual-gaming-festival',
-    title: 'Albury Annual Gaming Festival',
-    dateText: 'October 2026',
-    locationText: 'Albury Showgrounds',
+    id: 'riverina-gaming-festival',
+    title: 'Riverina Gaming Festival',
+    dateText: 'February 2026',
+    locationText: 'The Cube',
     game: 'Multi-Game Event',
     description:
       'Our biggest event of the year with multiple tournament stations, casual freeplay, and community showcases.',
-    ticketUrl: 'https://example.com/tickets/festival',
+    ticketUrl: '',
   },
 ];
