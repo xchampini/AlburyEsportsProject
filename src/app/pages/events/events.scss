@@ -10,6 +10,19 @@
   max-width: 66ch;
 }
 
+.status {
+  margin-top: 1.5rem;
+  font-weight: 700;
+
+  &.error {
+    color: $brand-pink;
+  }
+}
+
+.event-section {
+  margin-top: 2rem;
+}
+
 .event-grid {
   margin-top: 1rem;
   display: grid;

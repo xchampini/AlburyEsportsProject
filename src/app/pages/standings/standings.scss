@@ -1,10 +1,61 @@
-iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
+@use '../../../styles/mixins' as *;
+@use '../../../styles/variables' as *;
 
 :host {
   display: block;
-  height: 78.6vh;
+}
+
+.standings-page {
+  @include page-container;
+  padding: 2rem 0;
+}
+
+.heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 0.75rem;
+
+  p {
+    margin: 0;
+    color: $color-text;
+  }
+}
+
+.status {
+  margin-top: 1.5rem;
+  font-weight: 700;
+
+  &.error {
+    color: $brand-pink;
+  }
+}
+
+.standings-table {
+  margin-top: 1.5rem;
+  overflow-x: auto;
+  border: 1px solid $color-accent-cyan;
+  border-radius: 8px;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: minmax(70px, 0.6fr) minmax(180px, 1.4fr) minmax(180px, 1.4fr) minmax(
+      160px,
+      1fr
+    );
+  gap: 1rem;
+  min-width: 720px;
+  padding: 0.85rem 1rem;
+  border-top: 1px solid $color-accent-cyan;
+
+  &:first-child {
+    border-top: 0;
+  }
+}
+
+.table-head {
+  background: $color-surface;
+  font-weight: 800;
 }
