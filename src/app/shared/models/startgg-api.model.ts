@@ -9,6 +9,12 @@ export interface ApiEvent {
   bracketUrl?: string;
   isFeatured?: boolean;
   status: 'upcoming' | 'past';
+  images: [
+    {
+      url?: string | null;
+      type?: string | null;
+    },
+  ];
 }
 
 export interface EventsResponse {

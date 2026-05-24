@@ -45,9 +45,7 @@
       }
     </label>
 
-    <button type="submit" [disabled]="isSubmitting()">
-      {{ isSubmitting() ? 'Sending...' : 'Send message' }}
-    </button>
+    <app-button [label]="'Send message'" (click)="submitForm()"></app-button>
   </form>
 
   @if (isSubmitted()) {

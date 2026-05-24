@@ -9,6 +9,12 @@ export interface AppEvent {
   bracketUrl?: string;
   isFeatured?: boolean;
   status: 'upcoming' | 'past';
+  images?: [
+    {
+      url?: string | null;
+      type?: string | null;
+    },
+  ];
 }
 
 export interface StandingRow {
@@ -52,6 +58,12 @@ export interface StartggEvent {
     city?: string | null;
     addrState?: string | null;
     countryCode?: string | null;
+    images?: [
+      {
+        url?: string | null;
+        type?: string | null;
+      },
+    ];
   } | null;
   standings?: {
     nodes?: StartggStandingNode[] | null;
@@ -69,4 +81,10 @@ export interface StartggTournament {
   addrState?: string | null;
   countryCode?: string | null;
   events?: StartggEvent[] | null;
+  images?: [
+    {
+      url?: string | null;
+      type?: string | null;
+    },
+  ];
 }

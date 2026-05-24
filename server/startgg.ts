@@ -52,6 +52,10 @@ const TOURNAMENTS_BY_OWNER_QUERY = `
             }
           }
         }
+        images {
+          url
+          type
+        }
       }
     }
   }
@@ -76,7 +80,10 @@ export class StartggRequestError extends Error {
   }
 }
 
-async function executeStartggQuery<T>(query: string, variables: Record<string, unknown>): Promise<T> {
+async function executeStartggQuery<T>(
+  query: string,
+  variables: Record<string, unknown>,
+): Promise<T> {
   if (!config.startggApiToken) {
     throw new StartggConfigError('STARTGG_API_TOKEN is not configured.');
   }
@@ -100,7 +107,10 @@ async function executeStartggQuery<T>(query: string, variables: Record<string, u
   const payload = (await response.json()) as GraphqlResponse<T>;
 
   if (payload.errors?.length) {
-    const message = payload.errors.map((error) => error.message).filter(Boolean).join('; ');
+    const message = payload.errors
+      .map((error) => error.message)
+      .filter(Boolean)
+      .join('; ');
     throw new StartggRequestError(message || 'start.gg returned a GraphQL error.');
   }
 

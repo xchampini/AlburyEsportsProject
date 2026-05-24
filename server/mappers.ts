@@ -52,13 +52,18 @@ export function tournamentEvents(
         city: tournament.city,
         addrState: tournament.addrState,
         countryCode: tournament.countryCode,
+        images: tournament.images,
       },
       status,
     }));
   });
 }
 
-export function mapEvent(event: StartggEvent, index: number, status: 'upcoming' | 'past'): AppEvent {
+export function mapEvent(
+  event: StartggEvent,
+  index: number,
+  status: 'upcoming' | 'past',
+): AppEvent {
   const bracketUrl = event.slug ? `https://www.start.gg/${event.slug}` : undefined;
   const entrantText =
     typeof event.numEntrants === 'number' ? `${event.numEntrants} entrants registered.` : '';
@@ -74,6 +79,7 @@ export function mapEvent(event: StartggEvent, index: number, status: 'upcoming' 
     bracketUrl,
     isFeatured: index === 0,
     status,
+    images: event.tournament?.images,
   };
 }
 
@@ -93,7 +99,7 @@ export function mapStandings(events: StartggEvent[]): StandingsResponse {
   });
 
   return {
-    eventName: events.length === 1 ? events[0]?.name ?? 'Standings' : 'Standings',
+    eventName: events.length === 1 ? (events[0]?.name ?? 'Standings') : 'Standings',
     updatedAt: new Date().toISOString(),
     rows,
   };

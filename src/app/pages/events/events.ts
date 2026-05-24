@@ -1,10 +1,11 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { ApiEvent } from '../../shared/models/startgg-api.model';
 import { StartggApi } from '../../shared/services/startgg-api';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-events',
-  imports: [],
+  imports: [NgOptimizedImage],
   templateUrl: './events.html',
   styleUrl: './events.scss',
 })
