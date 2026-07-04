@@ -1,7 +1,9 @@
 <section class="events-page">
   <h1>Events</h1>
   <p class="intro">
-    Our events are built for community first: fun competition, good vibes, and local connection.
+    We host a variety of events throughout the year, including tournaments, casual meetups and
+    community gatherings. Check out our upcoming and past events below to stay up to date with
+    what's happening in the Albury Esports community.
   </p>
 
   @if (isLoading()) {
@@ -70,7 +72,9 @@
               }
               <div class="links">
                 @if (event.bracketUrl) {
-                  <a [href]="event.bracketUrl" target="_blank" rel="noopener noreferrer">Results</a>
+                  <a [href]="event.bracketUrl" target="_blank" rel="noopener noreferrer"
+                    >View Results</a
+                  >
                 }
               </div>
             </article>
