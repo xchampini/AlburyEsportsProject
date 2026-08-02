@@ -1,6 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Button } from '../../shared/button/button';
+import { EmailLinks } from '../../app.const';
 
 @Component({
   selector: 'app-contact-us',
@@ -13,6 +14,7 @@ export class ContactUs {
   protected readonly isSubmitting = signal(false);
   protected readonly isSubmitted = signal(false);
 
+  protected readonly emailLink = `mailto:${EmailLinks.AlburyEsportsEmail}?subject=Contact%20Us%20Inquiry`;
   protected readonly contactForm = signal<FormGroup>(this.buildForm());
 
   private buildForm(): FormGroup {

@@ -7,17 +7,18 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/home/home').then((m) => m.Home),
   },
   {
-    path: 'events',
-    loadComponent: () => import('./pages/events/events').then((m) => m.Events),
-  },
-  {
-    path: 'games',
-    loadComponent: () => import('./pages/games/games').then((m) => m.Games),
-  },
-  {
     path: 'about',
     loadComponent: () => import('./pages/about-us/about-us').then((m) => m.AboutUs),
   },
+  // {
+  //   path: 'events',
+  //   loadComponent: () => import('./pages/events/events').then((m) => m.Events),
+  // },
+  // {
+  //   path: 'games',
+  //   loadComponent: () => import('./pages/games/games').then((m) => m.Games),
+  // },
+
   // TODO: Uncomment this when we have a standings page
   // {
   //   path: 'standings',
@@ -28,10 +29,6 @@ export const routes: Routes = [
   //   path: 'shop',
   //   loadComponent: () => import('./pages/shop/shop').then((m) => m.Shop),
   // },
-  {
-    path: 'contact',
-    loadComponent: () => import('./pages/contact-us/contact-us').then((m) => m.ContactUs),
-  },
   {
     path: 'discord',
     canActivate: [discordRedirectGuard],

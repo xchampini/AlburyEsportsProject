@@ -1,10 +1,14 @@
-<section class="contact-page">
-  <div>
-    <h1>Contact Us</h1>
-    <p>Got a question or want to partner with us? Send us a message!</p>
-  </div>
+<div class="contact-container">
+  <h1>Contact Us</h1>
+  <p>
+    Got a question or want to partner with us? Send us a message to our email! We'd be happy to hear
+    from you.
+  </p>
+  <p>Our email: <a class="" [href]="emailLink">alburyesports@gmail.com</a></p>
+</div>
 
-  <form [formGroup]="contactForm()" (ngSubmit)="submitForm()" novalidate>
+<!-- TODO: set up contact us form, and backend for receiving emails -->
+<!-- <form [formGroup]="contactForm()" (ngSubmit)="submitForm()" novalidate>
     <label>
       Name
       <input type="text" formControlName="name" placeholder="e.g. John Smith" />
@@ -46,9 +50,8 @@
     </label>
 
     <app-button [label]="'Send message'" (click)="submitForm()"></app-button>
-  </form>
+  </form> -->
 
-  @if (isSubmitted()) {
-    <p class="success">Thanks! Your message was sent.</p>
-  }
-</section>
+@if (isSubmitted()) {
+  <p class="success">Thanks! Your message was sent.</p>
+}
