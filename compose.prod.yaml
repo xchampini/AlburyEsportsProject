@@ -1,0 +1,6 @@
+services:
+  website:
+    image: ghcr.io/alfojohn/albury-esports-site:latest
+    restart: unless-stopped
+    ports:
+      - '80:80'
