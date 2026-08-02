@@ -1,21 +1,25 @@
 @use '../../../styles/mixins' as *;
 @use '../../../styles/variables' as *;
 
-.contact-page {
+a[href] {
+  color: $color-accent-cyan;
+  text-decoration: underline;
+}
+
+.contact-container {
   @include page-container;
-  padding: 2rem 0;
 
   form {
-    @include card;
+    padding: 1.25rem 0;
     display: grid;
     gap: 0.9rem;
-    max-width: 620px;
+    width: 50%;
   }
 
   label {
     display: grid;
     gap: 0.4rem;
-    color: $color-text;
+    color: $color-text-light;
     font-weight: 600;
   }
 
@@ -51,5 +55,10 @@
     a {
       color: $color-accent-cyan;
     }
+  }
+
+  .error {
+    display: contents;
+    color: #ff0033;
   }
 }

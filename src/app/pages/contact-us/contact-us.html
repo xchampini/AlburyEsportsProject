@@ -1,32 +1,57 @@
-<section class="contact-page">
+<div class="contact-container">
   <h1>Contact Us</h1>
-  <p>Got a question or want to partner with us? Send us a message.</p>
+  <p>
+    Got a question or want to partner with us? Send us a message to our email! We'd be happy to hear
+    from you.
+  </p>
+  <p>Our email: <a class="" [href]="emailLink">alburyesports@gmail.com</a></p>
+</div>
 
-  <form [formGroup]="contactForm" (ngSubmit)="submitForm()" novalidate>
+<!-- TODO: set up contact us form, and backend for receiving emails -->
+<!-- <form [formGroup]="contactForm()" (ngSubmit)="submitForm()" novalidate>
     <label>
       Name
-      <input type="text" formControlName="name" />
+      <input type="text" formControlName="name" placeholder="e.g. John Smith" />
+      @if (contactForm().get('name')?.touched && contactForm().get('name')?.invalid) {
+        <p class="error">Name is required.</p>
+      }
     </label>
 
     <label>
       Email
-      <input type="email" formControlName="email" />
+      <input type="email" formControlName="email" placeholder="e.g. name@example.com" />
+      @if (contactForm().get('email')?.touched && contactForm().get('email')?.invalid) {
+        <p class="error">
+          @if (contactForm().get('email')?.errors?.['required']) {
+            Email is required.
+          } @else if (contactForm().get('email')?.errors?.['email']) {
+            Please enter a valid email address.
+          }
+        </p>
+      }
     </label>
 
     <label>
       Message
-      <textarea rows="5" formControlName="message"></textarea>
+      <textarea
+        rows="5"
+        formControlName="message"
+        placeholder="e.g. What events do you have coming up?"
+      ></textarea>
+      @if (contactForm().get('message')?.touched && contactForm().get('message')?.invalid) {
+        <p class="error">
+          @if (contactForm().get('message')?.errors?.['required']) {
+            Message is required.
+          } @else if (contactForm().get('message')?.errors?.['minlength']) {
+            Message must be at least 10 characters long.
+          }
+        </p>
+      }
     </label>
 
-    <button type="submit" [disabled]="isSubmitting()">{{ isSubmitting() ? 'Sending...' : 'Send message' }}</button>
-  </form>
+    <app-button [label]="'Send message'" (click)="submitForm()"></app-button>
+  </form> -->
 
-  @if (isSubmitted()) {
-    <p class="success">Thanks! Your message was sent.</p>
-  }
-
-  <div class="socials">
-    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
-  </div>
-</section>
+@if (isSubmitted()) {
+  <p class="success">Thanks! Your message was sent.</p>
+}

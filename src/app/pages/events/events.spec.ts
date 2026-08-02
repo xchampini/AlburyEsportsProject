@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 
 import { Events } from './events';
 
@@ -8,9 +10,9 @@ describe('Events', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Events]
-    })
-    .compileComponents();
+      imports: [Events],
+      providers: [provideHttpClient(), provideHttpClientTesting()],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(Events);
     component = fixture.componentInstance;

@@ -3,4 +3,5 @@ export interface NavRoute {
   label: string;
   path: string;
   exactMatch: boolean;
+  fragment?: string;
 }
