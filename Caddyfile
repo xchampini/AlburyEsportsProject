@@ -1,0 +1,3 @@
+alburyesports.com, www.alburyesports.com {
+    reverse_proxy website:80
+}

@@ -1,6 +1,26 @@
 services:
   website:
-    image: ghcr.io/alfojohn/albury-esports-site:latest
+    image: ghcr.io/xchampini/albury-esports-site:latest
+    container_name: albury-esports-site
+    restart: unless-stopped
+    expose:
+      - '80'
+
+  caddy:
+    image: caddy:2-alpine
+    container_name: albury-esports-caddy
     restart: unless-stopped
     ports:
       - '80:80'
+      - '443:443'
+      - '443:443/udp'
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - website
+
+volumes:
+  caddy_data:
+  caddy_config:
