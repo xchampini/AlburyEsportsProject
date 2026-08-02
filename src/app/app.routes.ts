@@ -6,10 +6,10 @@ export const routes: Routes = [
     path: '',
     loadComponent: () => import('./pages/home/home').then((m) => m.Home),
   },
-  {
-    path: 'about',
-    loadComponent: () => import('./pages/about-us/about-us').then((m) => m.AboutUs),
-  },
+  // {
+  //   path: 'about',
+  //   loadComponent: () => import('./pages/about-us/about-us').then((m) => m.AboutUs),
+  // },
   // {
   //   path: 'events',
   //   loadComponent: () => import('./pages/events/events').then((m) => m.Events),
