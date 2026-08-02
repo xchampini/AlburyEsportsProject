@@ -9,6 +9,7 @@
         <li>
           <a
             [routerLink]="route.path"
+            [fragment]="route.fragment ? route.fragment : undefined"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: route.exactMatch }"
             (click)="closeMenu()"
