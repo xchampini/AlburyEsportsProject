@@ -5,7 +5,8 @@ section {
   &:first-child {
     padding-top: 4rem;
   }
-  padding: 2rem 0;
+  padding: 1rem 0;
+  scroll-margin-top: 100px;
 
   &:last-child {
     padding-bottom: 4rem;

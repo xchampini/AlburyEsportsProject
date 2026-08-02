@@ -10,8 +10,7 @@
           <a
             [routerLink]="route.path"
             [fragment]="route.fragment ? route.fragment : undefined"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: route.exactMatch }"
+            [class.active]="isLinkActive(route)"
             (click)="closeMenu()"
             >{{ route.label }}</a
           >

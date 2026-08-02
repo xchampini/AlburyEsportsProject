@@ -1,7 +1,7 @@
 import { NavRoute } from './shared/models/nav.model';
 
 export const NavRoutes: NavRoute[] = [
-  { id: 1, label: 'Home', path: '/', exactMatch: true },
+  { id: 1, label: 'Home', path: '/', exactMatch: true, fragment: 'home' },
   // TODO: Uncomment this when we have an events and games page
   // { id: 2, label: 'Events', path: '/events', exactMatch: true },
   // { id: 3, label: 'Games', path: '/games', exactMatch: true },
