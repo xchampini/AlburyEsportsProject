@@ -32,3 +32,32 @@ jobs:
           tags: |
             ghcr.io/${{ github.repository_owner }}/albury-esports-site:latest
             ghcr.io/${{ github.repository_owner }}/albury-esports-site:${{ github.sha }}
+
+  deploy:
+    needs: publish
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Configure SSH
+        shell: bash
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+
+          printf '%s\n' "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+
+          printf '%s\n' "${{ secrets.DEPLOY_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+
+      - name: Deploy website
+        shell: bash
+        run: |
+          ssh \
+            -i ~/.ssh/deploy_key \
+            "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
+            'cd ~ &&
+             docker compose -f compose.prod.yaml pull &&
+             docker compose -f compose.prod.yaml up -d --remove-orphans &&
+             docker image prune -f'
