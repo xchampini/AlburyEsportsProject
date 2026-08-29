@@ -53,11 +53,14 @@ jobs:
 
       - name: Deploy website
         shell: bash
+        env:
+          GHCR_READ_TOKEN: ${{ secrets.GHCR_READ_TOKEN }}
         run: |
-          ssh \
+          printf '%s' "$GHCR_READ_TOKEN" | ssh \
             -i ~/.ssh/deploy_key \
             "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
-            'cd ~ &&
+            "docker login ghcr.io -u xchampini --password-stdin &&
+             cd ~ &&
              docker compose -f compose.yaml pull &&
              docker compose -f compose.yaml up -d --remove-orphans &&
-             docker image prune -f'
+             docker image prune -f"
